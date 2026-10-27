@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "data-duckdb": {
+      "command": "uvx",
+      "args": [
+        "--python",
+        "3.12",
+        "mcp-server-motherduck",
+        "--db-path",
+        "data/warehouse.duckdb"
+      ]
+    }
+  }
+}

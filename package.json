@@ -1,0 +1,16 @@
+{
+  "name": "multi-agent-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sales Insight — แดชบอร์ดยอดขายสำหรับ workshop Build AI Multi-Agent Apps with Claude Code (Node http ล้วน ไม่มี dependency)",
+  "license": "UNLICENSED",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "gate": "node scripts/quality-gate.js"
+  }
+}

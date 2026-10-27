@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Claude Code local state
+.claude/settings.local.json
+.claude/worktrees/
+
+# App runtime artifacts
+usage.json
+payload-*.json
+data/notes.json
+
+# Cleaned data (ผลลัพธ์จาก Workshop 3 — สร้างใหม่ได้ ไม่เก็บใน git)
+data/sales.clean.csv
