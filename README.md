@@ -6,13 +6,12 @@
 
 ```
 ├── package.json            npm scripts (start / gate) — Node >= 18, ไม่มี dependency
-├── .mcp.json               MCP ระดับโปรเจกต์: DuckDB (mcp-server-motherduck, read-only)
 ├── server.js               เซิร์ฟเวอร์ HTTP (Node http ล้วน)
 ├── data/
 │   ├── dataset.csv         ตารางแบนที่แอปอ่าน (ชุดเริ่มต้นยังไม่สะอาด — ตั้งใจให้งานแรกทำความสะอาด)
 │   ├── raw/
 │   │   └── dbd-2558.parquet  ข้อมูลดิบจริง 16,781 แถว (Parquet — แปลงจาก CSV ของ data.go.th)
-│   └── warehouse.duckdb     ฐาน DuckDB ที่มี view businesses_raw สำหรับ MCP
+│   └── warehouse.duckdb     ฐาน DuckDB ที่มี view businesses_raw (ใช้กับ MCP ใน Workshop 6)
 │   └── README.md           พจนานุกรมคอลัมน์ + เกณฑ์ข้อมูลที่สะอาดแล้ว
 ├── lib/
 │   ├── csv.js              ตัวอ่าน CSV รองรับ quote ครบ

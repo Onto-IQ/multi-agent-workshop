@@ -8,7 +8,7 @@
 - `data/raw/dbd-2558.parquet` — ข้อมูลดิบจริง 16,781 แถว (Parquet) พจนานุกรมอยู่ที่ `data/README.md`
 - `data/dataset.csv` — ตารางแบนที่แอปอ่าน (ชุดเริ่มต้นยังไม่สะอาด)
 - `lib/inspect-data.js` — กฎคุณภาพข้อมูลและตัวคำนวณยอดอ้างอิง (ชุดเดียวกับ quality gate)
-- `.mcp.json` — MCP ระดับโปรเจกต์: **DuckDB** (`mcp-server-motherduck` แบบ read-only) ให้เอเจนต์ query Parquet ด้วย SQL จริง
+- Workshop 6 จะสร้าง `.mcp.json` (DuckDB MCP read-only) — วันแรกยังไม่มีไฟล์นี้
 - `scripts/quality-gate.js` — เกณฑ์ตรวจ 6 เคส (อ่านเรื่อง quality gate ด้านล่าง)
 
 ## แผนที่การเดินทาง (workshops ของคอร์ส)
@@ -16,11 +16,11 @@
 คุณ (และ Claude) จะพาแอปนี้จากจุดเริ่มที่แดงหมด ไปถึงของจริงที่ขึ้น production:
 
 1. **W1 สำรวจด้วย swarm** — ทีมสำรวจอ่านโค้ดและข้อมูลจริง ส่งรายงานเดียว ไม่แตะไฟล์
-2. **W2 สายสืบข้อมูล** — สร้าง agent `data-researcher` ที่อ่านอย่างเดียว และใช้ MCP `data-duckdb` query SQL จริงบน Parquet
+2. **W2 สายสืบข้อมูล** — สร้าง agent `data-researcher` ที่อ่านอย่างเดียว (ยังไม่ต่อ MCP)
 3. **W3 แผนแล้วสร้าง** — `planner` วางแผนเป็นไฟล์ `developer` (lead) แตกงานขนาน 3 สาย: ข้อมูล (SQL ทำความสะอาด), backend, frontend
 4. **W4 QA ปิดวงจร** — `qa` รีโปรดิวส์บั๊กเป็นรายงาน `developer` แก้ตามรายงาน gate ต้องเขียว 6/6
 5. **W5 เช็กลิสต์ปล่อยของ** — skill `release-checklist` และ agent `release-manager` ที่ใช้มันเอง
-6. **W6 MCP ระดับทีม** — วิเคราะห์ SQL จริงหลายขั้นเพื่อสร้างยอดอ้างอิงของ capstone
+6. **W6 MCP ระดับทีม** — สร้าง `.mcp.json` เอง แล้ววิเคราะห์ SQL จริงหลายขั้นเพื่อสร้างยอดอ้างอิงของ capstone
 7. **W7 กั้นสิทธิ์และงบ** — hook บล็อกคำสั่งอันตราย + cost gate
 8. **W8 feature ของคุณ** — vibe code feature ที่คุณคิดเองด้วยทีม agents
 9. **W9 capstone** — ทีม 6 บทบาทปิดงาน release พร้อมสรุปผู้บริหาร แล้ว deploy ขึ้น Vercel

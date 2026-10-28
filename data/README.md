@@ -3,7 +3,7 @@
 ข้อมูลจริง "นิติบุคคลที่จดทะเบียนจัดตั้งใหม่ ประจำปี พ.ศ. 2558" ของ**กรมพัฒนาธุรกิจการค้า** ดาวน์โหลดจากพอร์ทัลข้อมูลเปิดภาครัฐ [data.go.th](https://data.go.th) (รายเดือน: มกราคม กุมภาพันธ์ และมิถุนายน 2558) รวม **16,781 แถวดิบ**
 
 - `data/raw/dbd-2558.parquet` — ข้อมูลดิบต้นทาง (Parquet) แปลงจาก CSV ของ data.go.th (เดิมเข้ารหัส TIS-620) คอลัมน์ชื่อ `*_raw` เก็บค่าตามต้นฉบับ
-- `data/warehouse.duckdb` — ฐาน DuckDB ที่มี view `businesses_raw` ที่ชี้ parquet ดิบ — MCP `data-duckdb` ใน `.mcp.json` ใช้ไฟล์นี้ (read-only)
+- `data/warehouse.duckdb` — ฐาน DuckDB ที่มี view `businesses_raw` ที่ชี้ parquet ดิบ — ใช้กับ MCP `data-duckdb` ที่ผู้เรียนสร้างใน Workshop 6 (read-only)
 - `data/dataset.csv` — ตารางแบนที่แอปอ่าน (ชุดเริ่มต้นคือสำเนาดิบ: แถวหัวตารางปน วันที่ พ.ศ. ทุนมีลูกน้ำ) การทำความสะอาดจะเขียนทับไฟล์นี้
 
 ## คอลัมน์ของ data/dataset.csv (สัญญาของตารางสะอาด)
