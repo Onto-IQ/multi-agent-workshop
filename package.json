@@ -11,6 +11,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "gate": "node scripts/quality-gate.js"
+    "gate": "node scripts/quality-gate.js",
+    "verify": "node scripts/verify-setup.mjs",
+    "verify-setup": "node scripts/verify-setup.mjs"
   }
 }

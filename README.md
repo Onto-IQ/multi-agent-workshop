@@ -17,7 +17,8 @@
 │   ├── csv.js              ตัวอ่าน CSV รองรับ quote ครบ
 │   └── inspect-data.js     กฎคุณภาพข้อมูล + ตัวคำนวณยอดอ้างอิง (ชุดเดียวกับ quality gate)
 ├── scripts/
-│   └── quality-gate.js     เกณฑ์ตรวจคุณภาพแอป 6 เคส (exit 2 = ยังไม่ผ่าน ตามดีไซน์)
+│   ├── quality-gate.js     เกณฑ์ตรวจคุณภาพแอป 6 เคส (exit 2 = ยังไม่ผ่าน ตามดีไซน์)
+│   └── verify-setup.mjs    ตรวจเครื่อง+แอปในโฟลเดอร์นี้ (รันที่ workshop ไม่ใช่ course)
 ├── web/                    หน้าเว็บ static (index.html / app.js / styles.css)
 └── CLAUDE.md               ภาพรวมโปรเจกต์ แผนที่การเดินทาง และกติกาที่ Claude ต้องอ่านก่อนลงมือ
 ```
@@ -25,9 +26,12 @@
 ## วิธีรัน
 
 ```bash
+npm run verify     # ตรวจเครื่อง + บูตแอป + starter gate แดง (exit 2) — รันที่โฟลเดอร์นี้
 npm start          # เปิดเซิร์ฟเวอร์ที่ http://127.0.0.1:3000
 npm run gate       # ตรวจคุณภาพแอปด้วย quality gate
 ```
+
+> สคริปต์ `verify-setup` มีสองที่: **ที่นี่** ตรวจแอปในโฟลเดอร์นี้ · **ที่ course repo** (โฟลเดอร์ที่มี `Lessons/`) ตรวจครบสอง repo รวม path workshop — อย่ารันสลับโฟลเดอร์แล้วคาดผลชุดเดียวกัน
 
 ตั้งค่าพอร์ตอื่นได้ด้วย `PORT` เช่น `PORT=3001 npm start` (Windows: `set PORT=3001`)
 
